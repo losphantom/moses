@@ -18,9 +18,9 @@ func main() {
 
 /*
  {
-   "image": "internet/zhenai-xxx-api:branh-xxx",
+   "image": "internet/xxx-api:branh-xxx",
    "relayReg": "10.1.1.55",
-   "targetReg": "inner.harbor.zhenaioa.com"
+   "targetReg": "inner.harbor.com"
   }
 */
 func relayImage(rw http.ResponseWriter, req *http.Request) {
