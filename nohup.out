@@ -1,0 +1,27 @@
+2019/04/10 15:26:59 server listening on 8087 ...
+2019/04/10 15:27:04 -------------start for  library/zookeeper:latest ---------------
+2019/04/10 15:27:04 *** 1. pull  hub.zhenai.com/library/zookeeper:latest
+latest: Pulling from library/zookeeper
+Digest: sha256:1015407669a65ef8a66e66cc0f1ee1abaebdeba9b49e8784b434a3f7b10f788d
+Status: Image is up to date for hub.zhenai.com/library/zookeeper:latest
+2019/04/10 15:27:05 *** 2. tag  hub.zhenai.com/library/zookeeper:latest   inner.harbor.zhenaioa.com/library/zookeeper:latest
+2019/04/10 15:27:05 *** 3. push  inner.harbor.zhenaioa.com/library/zookeeper:latest
+The push refers to repository [inner.harbor.zhenaioa.com/library/zookeeper]
+cb427c96aaec: Preparing
+3965aae9ec81: Preparing
+ef380d9e2676: Preparing
+0bc9bab29034: Preparing
+638d4576a926: Preparing
+c9b26f41504c: Preparing
+cd7100a72410: Preparing
+c9b26f41504c: Waiting
+cd7100a72410: Waiting
+0bc9bab29034: Layer already exists
+638d4576a926: Layer already exists
+cb427c96aaec: Layer already exists
+ef380d9e2676: Layer already exists
+3965aae9ec81: Layer already exists
+c9b26f41504c: Layer already exists
+cd7100a72410: Layer already exists
+latest: digest: sha256:1015407669a65ef8a66e66cc0f1ee1abaebdeba9b49e8784b434a3f7b10f788d size: 1785
+2019/04/10 15:27:06 -------------end of  library/zookeeper:latest ---------------
