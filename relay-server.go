@@ -42,6 +42,11 @@ func relayImage(rw http.ResponseWriter, req *http.Request) {
     cmd.Stderr = os.Stderr
     cmd.Run()
     log.Println("*** 2. tag ", fromImage, " ", toImage)
+    defer func() {
+        log.Println("===== clear images =====")
+        exec.Command("docker", "rmi", fromImage).Run()
+        exec.Command("docker", "rmi", toImage).Run()
+    }()
     cmd = exec.Command("docker", "tag", fromImage, toImage)
     cmd.Stdout = os.Stdout
     cmd.Stderr = os.Stderr

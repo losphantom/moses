@@ -1,0 +1,33 @@
+server:
+  port: 8080
+spring:
+  application.name: zhenai-api-gateway
+  profiles:
+    active: local
+    include: policy,ip,cors,hystrix,routes-api-zhenai-com,routes
+  output.ansi.enabled: always
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: zhenai-config-server
+      profile: policy,report,ip,cors,hystrix,routes_api_zhenai_com,fallback
+      label: ${spring.profiles.active}
+      enabled: false
+    inetutils:
+      preferred-networks: ^10(\.\d+)+$
+    nacos:
+      config:
+        server-addr: nacos:80
+        namespace: ${spring.profiles.active}
+        shared-dataids: zhenai-common-report.properties,zhenai-common-redis.properties
+        file-extension: yaml
+eureka:
+  instance:
+    metadata-map.zone: tx-cloud
+    preferIpAddress: true
+    hostname: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    registerWithEureka: true
+    service-url.defaultZone: http://zhenai-springcloud-eureka-server/eureka
